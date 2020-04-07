@@ -5,14 +5,14 @@ class Key {
     constructor(props){
         this.key = props.key || 'a'
         this.defaultQuery = 'body'
+        this.defaultScreenQuery = '.screen'
+        this.screenQuery = props.screenQuery || this.defaultScreenQuery
         this.keyCode = keyCods[this.key.toLowerCase()]
         this.styleMod = {}
         this.styleDef = {...props.style}
         this.style = {...style, ...this.styleDef, ...this.styleMod} 
         this.text = props.text || this.key
         this.func = props.func || undefined
-        this.render = this.render.bind(this)
-        this.remove = this.remove.bind(this)
         this.id = `keyId${this.keyCode+[[new Date()][0].toLocaleString()+Math.random(1000000)][0].replace(/\D/g,'')}`
         this.render(props.query || this.defaultQuery)
     }
@@ -35,12 +35,16 @@ class Key {
     remove(){
         global.document.querySelector(`.${this.id}`).style.visibility = 'hidden'
     }
+    putText(key){
+        global.document.querySelector(this.screenQuery).value += key
+    }
     keyDown(e){
         return (this.func)?this.func():(()=>{
             this.styleMod = {
                 backgroundColor: 'darkblue'
             }
             this.update()
+            this.putText(this.text)
         })()
     }
     keyUp(e){

@@ -26,12 +26,14 @@ wrapper.appendChild(keyboard)
 //render All Keys
 const keys = {}
 keyList.forEach((v)=>{
-    keys[v.key] = new Key({style:v.style,key:v.key,text:v.text,query:'.keyboard'})
+    keys[v.key] = new Key({func:v.func,style:v.style,key:v.key,text:v.text,query:'.keyboard'})
 })
 // Key press handlers
 const clickDown = (e) => {
+    e.preventDefault()
      for(let key in keyCods){
         if (e.keyCode == keyCods[key]){
+            console.log(keys)
             try {
                 keys[key].keyDown()
             }
@@ -44,6 +46,7 @@ const clickDown = (e) => {
 }
 global.document.body.onkeydown = clickDown
 const clickUp = (e) => {
+    e.preventDefault()
      for(let key in keyCods){
         if (e.keyCode == keyCods[key]){
             try {
