@@ -3,6 +3,7 @@ import keyCods from './keyCodeTable'
 import keyList from './keyList'
 
 document.body.style.fontSize = '1.5vw'
+document.body.style.backgroundColor = 'aliceblue'
 //Create Wrapper
 const wrapper = global.document.createElement('div');
 wrapper.className = 'wrapper'
@@ -14,7 +15,9 @@ const screen = global.document.createElement('textarea');
 screen.className = 'screen'
 screen.style.height = '200px'
 screen.style.resize = 'none'
+screen.style.marginBottom = '4vmin'
 wrapper.appendChild(screen)
+screen.value = 'ALT + Shift to switch Language'
 //Create Keyboard
 const keyboard = global.document.createElement('div');
 keyboard.className = 'keyboard'
@@ -25,9 +28,9 @@ keyboard.style.gridTemplateColumns = "1fr ".repeat(15)
 keyboard.style.gridTemplateRows = "1fr ".repeat(5)
 wrapper.appendChild(keyboard)
 //render All Keys
-const keys = {}
+global.keyes = {}
 keyList.forEach((v)=>{
-    keys[v.key] = new Key({...v,query:'.keyboard'})
+    global.keyes[v.key] = new Key({...v,query:'.keyboard'})
 })
 // Key press handlers
 const clickDown = (e) => {
@@ -35,7 +38,7 @@ const clickDown = (e) => {
      for(let key in keyCods){
         if (e.keyCode == keyCods[key]){
             try {
-                 keys[key].keyDown()
+                global.keyes[key].keyDown()
             }
             catch(e){
                 new Error('There is no such key on the virtual keyboard')
@@ -50,7 +53,7 @@ const clickUp = (e) => {
      for(let key in keyCods){
         if (e.keyCode == keyCods[key]){
             try {
-                keys[key].keyUp()
+                global.keyes[key].keyUp()
             }
             catch(e){
                 console.warn('There is no such key on the virtual keyboard')

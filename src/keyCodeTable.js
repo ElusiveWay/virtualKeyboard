@@ -1,4 +1,4 @@
-const keyCods={
+const keyCods = {
     backspace:8,
     tab:9,
     enter:13,
