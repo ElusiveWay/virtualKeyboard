@@ -1,6 +1,3 @@
-const delet = () => {
-    global.document.querySelector('.screen').value = global.document.querySelector('.screen').value.slice(0,-1)
-}
 const keyList = [
     //1 row
     {text: '`', key : 'graveaccent',style : {gridColumnStart: 'span 1'}},
@@ -16,9 +13,9 @@ const keyList = [
     {text: '0', key : '0',style : {gridColumnStart: 'span 1'}},
     {text: '-', key : 'dash',style : {gridColumnStart: 'span 1'}},
     {text: '=', key : 'equalsign',style : {gridColumnStart: 'span 1'}},
-    {text: 'backspace', key : 'backspace',style : {fontSize:'1em',gridColumnStart: 'span 2'}},
+    {text: 'backspace', key : 'backspace',style : {fontSize:'1em',gridColumnStart: 'span 2'}, func: 'back' },
     //2 row
-    {text: 'tab', key : 'tab',style : {fontSize:'1em',gridColumnStart: 'span 1'}},
+    {text: 'tab', key : 'tab',style : {fontSize:'1em',gridColumnStart: 'span 1'},func:'tab'},
     {text: 'q', key : 'q',style : {gridColumnStart: 'span 1'}},
     {text: 'w', key : 'w',style : {gridColumnStart: 'span 1'}},
     {text: 'e', key : 'e',style : {gridColumnStart: 'span 1'}},
@@ -32,9 +29,9 @@ const keyList = [
     {text: '[', key : 'openbracket',style : {gridColumnStart: 'span 1'}},
     {text: ']', key : 'closebracket',style : {gridColumnStart: 'span 1'}},
     {text: '\\', key : 'backslash',style : {gridColumnStart: 'span 1'}},
-    {text: 'del', key : 'delete',style : {gridColumnStart: 'span 1'}, func: delet},
+    {text: 'del', key : 'delete',style : {gridColumnStart: 'span 1'}, func: 'delet'},
     //3 row
-    {text: 'capslock', key : 'capslock',style : {fontSize:'1em',gridColumnStart: 'span 2'}},
+    {text: 'capslock', key : 'capslock',style : {fontSize:'1em',gridColumnStart: 'span 2'},func:'capslock'},
     {text: 'a', key : 'a',style : {gridColumnStart: 'span 1'}},
     {text: 's', key : 's',style : {gridColumnStart: 'span 1'}},
     {text: 'd', key : 'd',style : {gridColumnStart: 'span 1'}},
@@ -46,9 +43,9 @@ const keyList = [
     {text: 'l', key : 'l',style : {gridColumnStart: 'span 1'}},
     {text: ';', key : 'semicolon',style : {gridColumnStart: 'span 1'}},
     {text: '\'', key : 'singlequote',style : {gridColumnStart: 'span 1'}},
-    {text: 'enter', key : 'enter',style : {gridColumnStart: 'span 2'}},
+    {text: 'enter', key : 'enter',style : {gridColumnStart: 'span 2'},func:'enter'},
     //4 row
-    {text: 'shift', key : 'shift',style : {fontSize:'1em',gridColumnStart: 'span 2'}},
+    {text: 'shift', key : 'shift',style : {fontSize:'1em',gridColumnStart: 'span 2'},func:'shift'},
     {text: 'z', key : 'z',style : {gridColumnStart: 'span 1'}},
     {text: 'x', key : 'x',style : {gridColumnStart: 'span 1'}},
     {text: 'c', key : 'c',style : {gridColumnStart: 'span 1'}},
@@ -59,15 +56,15 @@ const keyList = [
     {text: ',', key : 'comma',style : {gridColumnStart: 'span 1'}},
     {text: '.', key : 'period',style : {gridColumnStart: 'span 1'}},
     {text: '/', key : 'forwardslash',style : {gridColumnStart: 'span 1'}},
-    {text: '▲', key : 'uparrow',style : {gridColumnStart: 'span 3'}},
+    {text: '▲', key : 'uparrow',style : {gridColumnStart: 'span 3'},func:'up'},
     //5 row
-    {text: 'ctrl', key : 'ctrl',style : {fontSize:'1em',gridColumnStart: 'span 1'}},
-    {text: 'op', key : 'leftwindowkey',style : {gridColumnStart: 'span 1'}},
-    {text: 'alt', key : 'alt',style : {gridColumnStart: 'span 1'}},
-    {text: 'space', key : 'space',style : {gridColumnStart: 'span 9'}},
-    {text: '◄', key : 'leftarrow',style : {gridColumnStart: 'span 1'}},
-    {text: '▼', key : 'downarrow',style : {gridColumnStart: 'span 1'}},
-    {text: '►', key : 'rightarrow',style : {gridColumnStart: 'span 1'}},
+    {text: 'ctrl', key : 'ctrl',style : {fontSize:'1em',gridColumnStart: 'span 1'},func:'ctrl'},
+    {text: 'op', key : 'leftwindowkey',style : {gridColumnStart: 'span 1'},func:'win'},
+    {text: 'alt', key : 'alt',style : {gridColumnStart: 'span 1'},func:'alt'},
+    {text: ' ', key : 'space',style : {gridColumnStart: 'span 9'}},
+    {text: '◄', key : 'leftarrow',style : {gridColumnStart: 'span 1'},func:'left'},
+    {text: '▼', key : 'downarrow',style : {gridColumnStart: 'span 1'},func:'down'},
+    {text: '►', key : 'rightarrow',style : {gridColumnStart: 'span 1'},func:'right'},
 
 ]
 

@@ -26,16 +26,15 @@ wrapper.appendChild(keyboard)
 //render All Keys
 const keys = {}
 keyList.forEach((v)=>{
-    keys[v.key] = new Key({func:v.func,style:v.style,key:v.key,text:v.text,query:'.keyboard'})
+    keys[v.key] = new Key({...v,query:'.keyboard'})
 })
 // Key press handlers
 const clickDown = (e) => {
-    e.preventDefault()
+     e.preventDefault()
      for(let key in keyCods){
         if (e.keyCode == keyCods[key]){
-            console.log(keys)
             try {
-                keys[key].keyDown()
+                 keys[key].keyDown()
             }
             catch(e){
                 new Error('There is no such key on the virtual keyboard')
