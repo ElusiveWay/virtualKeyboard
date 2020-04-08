@@ -2,6 +2,7 @@ import Key from './key'
 import keyCods from './keyCodeTable'
 import keyList from './keyList'
 
+document.body.style.fontSize = '1.5vw'
 //Create Wrapper
 const wrapper = global.document.createElement('div');
 wrapper.className = 'wrapper'
