@@ -110,6 +110,7 @@ class Key {
     }
     enter(){
         this.changeColor('#DD0','black')
+        this.putText(event,undefined,'\r')
     }
     delet(){
         this.changeColor('darkred')
