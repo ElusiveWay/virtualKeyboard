@@ -9,6 +9,8 @@ const style =
     alignItems:'center',
     fontSize:'40px',
     cursor:'pointer',
+    transition:'.2s',
+    borderRadius:'10px',
     gridColumnStart:' span 1'
 }
 

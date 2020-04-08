@@ -29,9 +29,9 @@ const keyList = [
     {text: '[', key : 'openbracket',style : {gridColumnStart: 'span 1'}},
     {text: ']', key : 'closebracket',style : {gridColumnStart: 'span 1'}},
     {text: '\\', key : 'backslash',style : {gridColumnStart: 'span 1'}},
-    {text: 'del', key : 'delete',style : {gridColumnStart: 'span 1'}, func: 'delet'},
+    {text: 'del', key : 'delete',style : {fontSize:'1.3em',gridColumnStart: 'span 1'}, func: 'delet'},
     //3 row
-    {text: 'capslock', key : 'capslock',style : {fontSize:'1em',gridColumnStart: 'span 2'},func:'capslock'},
+    {text: 'capslock', key : 'capslock',style : {fontSize:'1.3em',gridColumnStart: 'span 2'},func:'capslock'},
     {text: 'a', key : 'a',style : {gridColumnStart: 'span 1'}},
     {text: 's', key : 's',style : {gridColumnStart: 'span 1'}},
     {text: 'd', key : 'd',style : {gridColumnStart: 'span 1'}},
@@ -43,7 +43,7 @@ const keyList = [
     {text: 'l', key : 'l',style : {gridColumnStart: 'span 1'}},
     {text: ';', key : 'semicolon',style : {gridColumnStart: 'span 1'}},
     {text: '\'', key : 'singlequote',style : {gridColumnStart: 'span 1'}},
-    {text: 'enter', key : 'enter',style : {gridColumnStart: 'span 2'},func:'enter'},
+    {text: 'enter', key : 'enter',style : {fontSize:'1.3em',gridColumnStart: 'span 2'},func:'enter'},
     //4 row
     {text: 'shift', key : 'shift',style : {fontSize:'1em',gridColumnStart: 'span 2'},func:'shift'},
     {text: 'z', key : 'z',style : {gridColumnStart: 'span 1'}},
@@ -59,8 +59,8 @@ const keyList = [
     {text: '▲', key : 'uparrow',style : {gridColumnStart: 'span 3'},func:'up'},
     //5 row
     {text: 'ctrl', key : 'ctrl',style : {fontSize:'1em',gridColumnStart: 'span 1'},func:'ctrl'},
-    {text: 'op', key : 'leftwindowkey',style : {gridColumnStart: 'span 1'},func:'win'},
-    {text: 'alt', key : 'alt',style : {gridColumnStart: 'span 1'},func:'alt'},
+    {text: 'op', key : 'leftwindowkey',style : {fontSize:'1.3em',gridColumnStart: 'span 1'},func:'win'},
+    {text: 'alt', key : 'alt',style : {fontSize:'1.3em',gridColumnStart: 'span 1'},func:'alt'},
     {text: ' ', key : 'space',style : {gridColumnStart: 'span 9'}},
     {text: '◄', key : 'leftarrow',style : {gridColumnStart: 'span 1'},func:'left'},
     {text: '▼', key : 'downarrow',style : {gridColumnStart: 'span 1'},func:'down'},
