@@ -2,13 +2,19 @@ import Key from './key'
 import keyCods from './keyCodeTable'
 import keyList from './keyList'
 
+document.querySelector('html').style.overflow = 'hidden'
 document.body.style.fontSize = '1.5vw'
+document.body.style.height = '100vh'
 document.body.style.backgroundColor = 'aliceblue'
+document.body.style.display = 'flex'
+document.body.style.justifyContent = 'center'
+document.body.style.alignItems = 'center'
 //Create Wrapper
 const wrapper = global.document.createElement('div');
 wrapper.className = 'wrapper'
 wrapper.style.display = 'flex'
 wrapper.style.flexDirection = 'column'
+wrapper.style.maxWidth = '1100px'
 global.document.body.appendChild(wrapper)
 //Create Screen
 const screen = global.document.createElement('textarea');
